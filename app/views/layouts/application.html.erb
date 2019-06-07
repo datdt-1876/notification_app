@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <%= render "layouts/header" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      Me: <%= current_user.email %>
+      <div id="my_notification_box">
+        <p>Hello</p>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

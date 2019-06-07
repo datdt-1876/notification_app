@@ -1,0 +1,10 @@
+<h2>User wall</h2>
+<%= @user.email %>
+<br/>
+
+
+<%= form_tag "/messages", method: "post", remote: true, id: "new_message" do %>
+  <%= text_field_tag(:content) %>
+  <%= hidden_field_tag :user_id, @user.id %>
+  <%= submit_tag("Send") %>
+<% end %>
